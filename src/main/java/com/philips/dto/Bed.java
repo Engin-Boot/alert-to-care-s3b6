@@ -49,4 +49,9 @@ public class Bed {
 	public void setDateOfAdmit(String dateOfAdmit) {
 		this.dateOfAdmit = dateOfAdmit;
 	}
+	public boolean isBedEmpty() {
+		if(this.patientId==0)
+			return true;
+		return false;
+	}
 }

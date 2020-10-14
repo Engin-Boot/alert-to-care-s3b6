@@ -7,8 +7,6 @@ import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
-
 import com.philips.dto.Bed;
 
 @SpringBootTest

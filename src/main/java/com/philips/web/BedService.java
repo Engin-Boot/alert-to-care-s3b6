@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.philips.dto.Bed;
 
 @RestController
-public class RestService {
+public class BedService {
 	public static int sqLayoutBeds=5; 
 	public static int nextBed=4;
 	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
     Date date = new Date(); 
-	private Map<Integer, Bed> bedMap = new HashMap<>();
+	public static Map<Integer, Bed> bedMap = new HashMap<>();
 	{  
 		bedMap.put(1,new Bed(1,1001,formatter.format(date)));
 		bedMap.put(2,new Bed(2,1002,formatter.format(date)));
