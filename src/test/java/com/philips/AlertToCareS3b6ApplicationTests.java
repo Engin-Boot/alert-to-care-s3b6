@@ -8,11 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 class AlertToCareS3b6ApplicationTests {
 	
 	@Test
-	void testBedClass() {
-		
-	}
-	@Test
-	void testGetUri() {
-		
+	void contextLoads() {
 	}
 }
