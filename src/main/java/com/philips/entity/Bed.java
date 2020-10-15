@@ -1,20 +1,36 @@
-package com.philips.dto;
+package com.philips.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name="Beds")
 public class Bed {
+	@Id
+	@Column(name="b_id")
 	private int bId;
+	@Column(name="pat_id")
 	private int patientId;
+	@Column(name="dpt", length=25)
 	private String dpt;
+	@Column(name="alert_status")
 	private boolean alertStatus=false;
-	private String dateOfAdmit;
+	@DateTimeFormat(pattern="d-M-yyyy")
+	@Column(name="date_admit")
+	private LocalDate dateOfAdmit;
 	public Bed() {
 		
 	}
 	public Bed(int bId) {
 		this.bId=bId;
 	}
-	public Bed(int bId, int pId,String dt) {
+	public Bed(int bId, int pId,LocalDate dt) {
 		this.bId = bId;
 		this.patientId=pId;
 		this.dateOfAdmit=dt;
@@ -43,10 +59,10 @@ public class Bed {
 	public void setAlertStatus(boolean alertStatus) {
 		this.alertStatus = alertStatus;
 	}
-	public String getDateOfAdmit() {
+	public LocalDate getDateOfAdmit() {
 		return dateOfAdmit;
 	}
-	public void setDateOfAdmit(String dateOfAdmit) {
+	public void setDateOfAdmit(LocalDate dateOfAdmit) {
 		this.dateOfAdmit = dateOfAdmit;
 	}
 	public boolean isBedEmpty() {
