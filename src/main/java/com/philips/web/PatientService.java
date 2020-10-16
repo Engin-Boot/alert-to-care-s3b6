@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.philips.dao.IBedDao;
 import com.philips.dao.IPatientDao;
+import com.philips.entity.Bed;
 import com.philips.entity.Patient;
 import com.philips.exceptions.PatientIdException;
 import com.philips.exceptions.PatientIdNotFoundException;
@@ -67,6 +68,10 @@ public class PatientService {
 		LocalDate now = LocalDate.now(); 
 		p.setDateOfAdmit(now);
 		dao.editPatient(p);
+		List<Bed> lst= bedDao.availableBeds();
+		Bed b1=lst.get(0);
+		b1.setPatientId(id);
+		bedDao.editBed(b1);
 		return p;
 	}
 	

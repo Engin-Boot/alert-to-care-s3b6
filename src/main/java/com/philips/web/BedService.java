@@ -20,9 +20,6 @@ public class BedService {
 	@Autowired
 	private IBedDao dao;
 	
-	public static int sqLayoutBeds=5; 
-	public static int nextBed=1;
-	
 	@PostMapping("/addbed")
 	public String addBed(@RequestBody Bed bed) throws BedIdException {
 		Bed bedFromDb = dao.viewBed(bed.getbId());
@@ -46,26 +43,12 @@ public class BedService {
 		 return "Bed Edited Successfully";
 	}
 	
-	@PostMapping("/CreatesquareLayout")
-	public String createSquareLayout(@RequestBody int totalBeds){
-		sqLayoutBeds=totalBeds;
-		return "Layout created with requested beds";
-	}
-	@PostMapping("/admitToSquareLayout")
-	public String admitToSquareLayout(@RequestBody int patId){
-		if(nextBed>sqLayoutBeds)
-			return "No beds Available";
-		
-		nextBed++;
-		return "Patient admitted";
-	}
-	
 	@GetMapping("/alert")
 	public List<Bed> alert(){
 		return dao.alertBeds();
 	}
 	@PostMapping("/setAlert")
-	public String setAlert(@RequestBody int bId) {
+	public String setAlert(@RequestBody Integer bId) {
 		Bed bed=dao.viewBed(bId);
 		if(bed==null)
 			return "bed not found";
@@ -74,12 +57,16 @@ public class BedService {
 		return "alert Set";
 	}
 	@PostMapping("/resetAlert")
-	public String resetAlert(@RequestBody int bId) {
+	public String resetAlert(@RequestBody Integer bId) {
 		Bed bed=dao.viewBed(bId);
 		if(bed==null)
 			return "bed not found";
 		bed.setAlertStatus(false);
 		dao.editBed(bed);
 		return "alert Reset";
+	}
+	@GetMapping("/availableBeds")
+	public List<Bed> availableBeds(){
+		return dao.availableBeds();
 	}
 }

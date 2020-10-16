@@ -14,9 +14,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Bed {
 	@Id
 	@Column(name="b_id")
-	private int bId;
+	private Integer bId;
 	@Column(name="pat_id")
-	private int patientId=0;
+	private Integer patientId=0;
 	@Column(name="dpt", length=25)
 	private String dpt;
 	@Column(name="alert_status")
@@ -24,21 +24,28 @@ public class Bed {
 	@DateTimeFormat(pattern="d-M-yyyy")
 	@Column(name="date_admit")
 	private LocalDate dateOfAdmit;
+	
+	@Column(name="x_coordinate")
+	private Integer xCoordinate=0;
+	@Column(name="y_coordinate")
+	private Integer yCoordinate=0;
+	
 	public Bed() {
 		
 	}
-	public Bed(int bId) {
+	public Bed(Integer bId) {
 		this.bId=bId;
 	}
-	public Bed(int bId, int pId,LocalDate dt) {
+	public Bed(Integer bId, Integer x,Integer y,String dpt ) {
 		this.bId = bId;
-		this.patientId=pId;
-		this.dateOfAdmit=dt;
+		this.xCoordinate=x;
+		this.yCoordinate=y;
+		this.dpt=dpt;
 	}
-	public int getbId() {
+	public Integer getbId() {
 		return bId;
 	}
-	public int getPatientId() {
+	public Integer getPatientId() {
 		return patientId;
 	}
 	public String getDpt() {
@@ -69,5 +76,17 @@ public class Bed {
 		if(this.patientId==0)
 			return true;
 		return false;
+	}
+	public Integer getxCoordinate() {
+		return xCoordinate;
+	}
+	public void setxCoordinate(Integer xCoordinate) {
+		this.xCoordinate = xCoordinate;
+	}
+	public Integer getyCoordinate() {
+		return yCoordinate;
+	}
+	public void setyCoordinate(Integer yCoordinate) {
+		this.yCoordinate = yCoordinate;
 	}
 }

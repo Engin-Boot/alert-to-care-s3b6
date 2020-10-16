@@ -33,7 +33,7 @@ public class BedDaoImpl implements IBedDao{
 	}
 
 	@Override
-	public Bed viewBed(int bid) {
+	public Bed viewBed(Integer bid) {
 		Bed bed = em.find(Bed.class, bid);
 		return bed;
 	}
@@ -69,7 +69,7 @@ public class BedDaoImpl implements IBedDao{
 	}
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean dischargePatient(int pid){
+	public boolean dischargePatient(Integer pid){
 		String jpql = "from Bed where patientId=:id";
 		Query qry = em.createQuery(jpql);
 		qry.setParameter("id", pid);
