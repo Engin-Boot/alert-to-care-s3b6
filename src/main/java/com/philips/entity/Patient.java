@@ -1,5 +1,7 @@
 package com.philips.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,6 +18,13 @@ public class Patient {
 	private String pName;
 	@Column(name="phone_no", length=25)
 	private String phoneNo;
+	@Column(name="date_admit")
+	private LocalDate dateOfAdmit;
+	@Column(name="date_discharge")
+	private LocalDate dateOfDischarge;
+	public Patient() {
+		
+	}
 	
 	public Patient(int id,String name,String ph) {
 		this.pId=id;
@@ -39,6 +48,18 @@ public class Patient {
 	}
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
+	}
+	public LocalDate getDateOfAdmit() {
+		return dateOfAdmit;
+	}
+	public void setDateOfAdmit(LocalDate dateOfAdmit) {
+		this.dateOfAdmit = dateOfAdmit;
+	}
+	public LocalDate getDateOfDischarge() {
+		return dateOfDischarge;
+	}
+	public void setDateOfDischarge(LocalDate dateOfDischarge) {
+		this.dateOfDischarge = dateOfDischarge;
 	}
 	
 }

@@ -1,6 +1,6 @@
 package com.philips.web;
 
-import java.util.Date;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,6 @@ public class BedService {
 	
 	public static int sqLayoutBeds=5; 
 	public static int nextBed=1;
-    Date date = new Date(); 
 	
 	@PostMapping("/addbed")
 	public String addBed(@RequestBody Bed bed) throws BedIdException {
@@ -54,7 +53,6 @@ public class BedService {
 	}
 	@PostMapping("/admitToSquareLayout")
 	public String admitToSquareLayout(@RequestBody int patId){
-		date = new Date();
 		if(nextBed>sqLayoutBeds)
 			return "No beds Available";
 		

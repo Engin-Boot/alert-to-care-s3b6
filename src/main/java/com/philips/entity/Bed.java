@@ -16,7 +16,7 @@ public class Bed {
 	@Column(name="b_id")
 	private int bId;
 	@Column(name="pat_id")
-	private int patientId;
+	private int patientId=0;
 	@Column(name="dpt", length=25)
 	private String dpt;
 	@Column(name="alert_status")
