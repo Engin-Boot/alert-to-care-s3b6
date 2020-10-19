@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.philips.entity.Patient;
-@SpringBootTest
+//@SpringBootTest
 public class PatientServiceTest {
 	@Test
     void testCreatePatient() throws URISyntaxException {
