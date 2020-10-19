@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.philips.dao.BedDaoImpl;
 import com.philips.entity.Bed;
 
-@SpringBootTest
+//@SpringBootTest
 public class BedDaoTest {
 	
 	@Test

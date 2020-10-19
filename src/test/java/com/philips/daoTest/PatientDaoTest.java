@@ -12,7 +12,7 @@ import com.philips.dao.PatientDao;
 import com.philips.entity.Bed;
 import com.philips.entity.Patient;
 
-@SpringBootTest
+//@SpringBootTest
 public class PatientDaoTest {
 	@Test
 	public void testBedDao() {

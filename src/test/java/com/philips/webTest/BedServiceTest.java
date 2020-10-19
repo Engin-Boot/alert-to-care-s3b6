@@ -18,7 +18,7 @@ import com.philips.entity.Bed;
 //@ExtendWith(SpringExtension.class)
 //@WebFluxTest(controllers = BedService.class)
 //@Import(BedService.class)
-@SpringBootTest
+//@SpringBootTest
 public class BedServiceTest {
 	
 //	@MockBean
