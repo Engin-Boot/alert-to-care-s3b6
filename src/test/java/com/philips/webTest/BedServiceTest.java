@@ -29,29 +29,18 @@ public class BedServiceTest {
 	
 	@Test
     void testCreateBed() throws URISyntaxException {
-		RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:"+8082+"/addbed";
-        URI uri = new URI(baseUrl);
-        Bed bed = new Bed(3);
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("X-COM-PERSIST", "true");      
- 
-        HttpEntity<Bed> request = new HttpEntity<>(bed, headers);
-         
-        ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
-         
-        //Verify request succeed
-        Assertions.assertEquals(200, result.getStatusCodeValue());
+//		RestTemplate restTemplate = new RestTemplate();
+//        final String baseUrl = "http://localhost:"+8082+"/addbed";
+//        URI uri = new URI(baseUrl);
+//        Bed bed = new Bed(3);
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.set("X-COM-PERSIST", "true");      
 // 
-//        Mockito.when(repository.addBed(bed)).thenReturn(true);
-////        webClient.post()
-////            .uri("/addbed")
-////            .contentType(MediaType)
-////            .body(BodyInserters.fromObject(bed))
-////            .exchange()
-////            .expectStatus().isOk();
-// 
-//        Mockito.verify(repository, times(1)).addBed(bed);
+//        HttpEntity<Bed> request = new HttpEntity<>(bed, headers);
+//         
+//        ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
+//         
+//        Assertions.assertEquals(200, result.getStatusCodeValue());
     }
      
 }
