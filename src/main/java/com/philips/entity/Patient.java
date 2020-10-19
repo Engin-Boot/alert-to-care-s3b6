@@ -25,7 +25,9 @@ public class Patient {
 	public Patient() {
 		
 	}
-	
+	public Patient(int id) {
+		this.pId=id;
+	}
 	public Patient(int id,String name,String ph) {
 		this.pId=id;
 		this.pName=name;
