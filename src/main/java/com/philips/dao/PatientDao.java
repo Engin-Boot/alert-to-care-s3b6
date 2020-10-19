@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.philips.entity.Bed;
 import com.philips.entity.Patient;
 
 @Repository
@@ -17,8 +18,15 @@ public class PatientDao implements IPatientDao {
 	@PersistenceContext
 	private EntityManager em;
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean addPatient(Patient patient) {
+		String jpql = "from Patient where pId=:id";
+		Query qry = em.createQuery(jpql);
+		qry.setParameter("id", patient.getpId());
+		List<Patient> lst=qry.getResultList();
+		if(!lst.isEmpty())
+			return false;
 		em.persist(patient);
 		return true;
 	}

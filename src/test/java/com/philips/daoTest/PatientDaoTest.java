@@ -8,20 +8,18 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.philips.dao.BedDaoImpl;
+import com.philips.dao.PatientDao;
 import com.philips.entity.Bed;
+import com.philips.entity.Patient;
 
 @SpringBootTest
-public class BedDaoTest {
-	
+public class PatientDaoTest {
 	@Test
 	public void testBedDao() {
-		BedDaoImpl dao = Mockito.mock(BedDaoImpl.class);
-		Bed b=new Bed(20);
-		dao.addBed(b);
-		Mockito.when(dao.viewBed(20)).thenReturn(b);
-		List<Bed> beds = new ArrayList<>();
-		beds.add(b);
-		Mockito.when(dao.viewBed()).thenReturn(beds);
+		PatientDao dao = Mockito.mock(PatientDao.class);
+		Patient p=new Patient(20);
+		dao.addPatient(p);
+		Mockito.when(dao.viewPatient(20)).thenReturn(p);
 		
 	}
 }

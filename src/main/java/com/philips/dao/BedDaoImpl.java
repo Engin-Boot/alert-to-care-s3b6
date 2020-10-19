@@ -20,6 +20,12 @@ public class BedDaoImpl implements IBedDao{
 	
 	@Override
 	public boolean addBed(Bed bed) {
+		String jpql = "from Bed where bId=:id";
+		Query qry = em.createQuery(jpql);
+		qry.setParameter("id", bed.getbId());
+		List<Bed> lst = qry.getResultList();
+		if(!lst.isEmpty())
+			return false;
 		em.persist(bed);
 		return true;
 	}

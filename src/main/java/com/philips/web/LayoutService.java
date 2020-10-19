@@ -1,6 +1,7 @@
 package com.philips.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.philips.dao.IBedDao;
 import com.philips.entity.Bed;
 
+@CrossOrigin
 @RestController
 public class LayoutService {
 	@Autowired
