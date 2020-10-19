@@ -12,5 +12,6 @@ public interface IBedDao {
 	public boolean removeBed(Bed bed);
 	public List<Bed> alertBeds();
 	public List<Bed> availableBeds();
+	public List<Bed> availableBeds(String department);
 	public boolean dischargePatient(Integer pid);
 }

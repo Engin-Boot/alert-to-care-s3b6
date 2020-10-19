@@ -80,5 +80,15 @@ public class BedDaoImpl implements IBedDao{
 		}
 		return true;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Bed> availableBeds(String department) {
+		String jpql = "from Bed where patientId=:id and dpt=:department";
+		Query qry = em.createQuery(jpql);
+		qry.setParameter("id", 0);
+		qry.setParameter("department", department);
+		return qry.getResultList();
+	}
 	
 }

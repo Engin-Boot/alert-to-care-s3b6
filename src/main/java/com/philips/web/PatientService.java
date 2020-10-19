@@ -85,4 +85,21 @@ public class PatientService {
 		bedDao.dischargePatient(id);
 		return p;
 	}
+	@GetMapping("/admitTo/{dpt}/{pid}")
+	public String admitTo(@PathVariable("dpt") String dpt,@PathVariable("pid") int id) throws PatientIdNotFoundException {
+		Patient p=dao.viewPatient(id);
+		if(p==null)
+			throw new PatientIdNotFoundException("Patient ID "+id+" not Exists in DB");
+		LocalDate now = LocalDate.now(); 
+		p.setDateOfAdmit(now);
+		dao.editPatient(p);
+		List<Bed> lst= bedDao.availableBeds(dpt);
+		if(lst.isEmpty())
+			return "Beds not available in "+dpt;
+		Bed b1=lst.get(0);
+		b1.setPatientId(id);
+		bedDao.editBed(b1);
+		return "Patient admitted to "+ dpt+" Successfully";
+	}
+	
 }
