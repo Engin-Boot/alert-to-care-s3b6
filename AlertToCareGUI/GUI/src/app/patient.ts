@@ -1,9 +1,9 @@
 export class Patient{
     constructor(
-        public pid:number,
-        public pname:string,
-        public pnum:number,
-        public doa:string,
-        public dod:string
+        public pId:number,
+        public pName:string,
+        public phoneNum:number,
+        public dateOfAdmit:string,
+        public dateOfDischarge:string
     ){}
 }

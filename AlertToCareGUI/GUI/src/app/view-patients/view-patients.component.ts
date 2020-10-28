@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Patient } from '../patient';
-import { PatientService } from '../patient.service';
+import { RegisterpatientService } from '../registerpatient.service';
+
 
 @Component({
   selector: 'app-view-patients',
@@ -12,14 +13,14 @@ import { PatientService } from '../patient.service';
 export class ViewPatientsComponent implements OnInit {
   patients:Observable<Patient[]>; 
 
-  constructor(private patientService:PatientService,
+  constructor(private patientService:RegisterpatientService,
     private router:Router) { }
 
   ngOnInit() {
     this.reloadData();
   }
   reloadData(){
-    this.patients=this.patientService.getPatientsList();
+    // this.patients=this.patientService.getPatientsList();
   }
 
   

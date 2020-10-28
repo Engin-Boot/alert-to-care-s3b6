@@ -9,6 +9,10 @@ export class RegisterpatientService {
   constructor(private http:HttpClient) { }
 
   public doRegisterPatient(patient){
-    return this.http.post("http://localhost:9191/addPatient",patient,{responseType:'text' as 'json'});
+    return this.http.post("http://localhost:8082/addPatient",patient,{responseType:'text' as 'json'});
+  }
+
+  public getPatientsList(){
+    return this.http.get("http://localhost:8082/getAllUsers");
   }
 }

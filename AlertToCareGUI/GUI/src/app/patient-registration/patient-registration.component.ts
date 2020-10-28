@@ -17,6 +17,7 @@ export class PatientRegistrationComponent implements OnInit {
     ngOnInit(): void {
   }
   public registerNow(){
+      console.log(this.patient);
     let resp=this.service.doRegisterPatient(this.patient);
     resp.subscribe((data)=>this.message=data);
   }
