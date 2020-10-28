@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Patient List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Patient Contact</th>
+            <th>DOA</th>
+            <th> DOD</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of patients | async">
+            <td>{{patient.pid}}</td>
+            <td>{{patient.pname}}</td>
+            <td>{{patient.pnum}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
