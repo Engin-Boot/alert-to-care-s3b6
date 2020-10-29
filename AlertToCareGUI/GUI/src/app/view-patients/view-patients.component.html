@@ -19,14 +19,6 @@
               <th>DOD</th>
               
           </tr>
-<<<<<<< HEAD
-        </thead>
-        <tbody>
-          <tr *ngFor="let patient of patients | async">
-            <td>{{patient.pId}}</td>
-            <td>{{patient.pName}}</td>
-            <td>{{patient.pNum}}</td>
-=======
       </thead>
       <tbody>
           <tr *ngFor="let patient of patients">
@@ -40,7 +32,6 @@
                 <td class="text-center"><button class="btn btn-info" (click)="discharge(patient.pId)"> Discharge</button></td>
                 <td class="text-center"><button class="btn btn-danger" (click)="delete(patient.pId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
               
->>>>>>> 3cbacabfbeeb6dd4b7860e157637b7304814e756
           </tr>
       </tbody>
       </table>

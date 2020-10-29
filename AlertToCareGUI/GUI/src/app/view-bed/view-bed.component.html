@@ -31,9 +31,9 @@
               <td>{{bed.patientId}}</td>
               <!-- <td>{{bed.xCoordinate}}</td>
               <td>{{bed.yCoordinate}}</td>      -->
-              <td class="text-center"><button class="btn btn-info" (click)="registerAlertOption()"> Alert</button></td>
-                <td class="text-center"><button class="btn btn-info" (click)="registerResetoption()"> Reset</button></td>      
-                </tr>
+                <td class="text-center"><button class="btn btn-info" (click)="registerAlertOption(bed.bId)"> Alert</button></td>
+                <td class="text-center"><button class="btn btn-info" (click)="registerResetoption(bed.bId)"> Reset</button></td>      
+        </tr>
       </tbody>
       </table>
       </div>

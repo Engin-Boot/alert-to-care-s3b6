@@ -10,21 +10,19 @@ import { RegisterpatientService } from '../registerpatient.service';
 export class ViewBedComponent implements OnInit {
   beds:any;
   message:any;
-  bd:Bed=new Bed(1,1,"","",1,1,1);
+  bed:Bed;
   constructor(private patientService:RegisterpatientService) { }
 
-  public registerAlertOption(){
-    console.log(this.bd);
-  let resp=this.patientService.alertTheStatus(this.bd);
-  resp.subscribe((data)=>this.message=data);
+  public registerAlertOption(id:number){
+    let resp = this.patientService.alertTheStatus(id);
+    resp.subscribe((data)=>this.message=data);
   }
-  public registerResetoption(){
-    console.log(this.bd);
-    let resp=this.patientService.resetThestatus(this.bd);
+  public registerResetoption(id:number){
+    let resp = this.patientService.resetThestatus(id);
     resp.subscribe((data)=>this.message=data);
   }
   ngOnInit(){
-    let resp=this.patientService.viewAllBeds();
+    let resp = this.patientService.viewAllBeds();
     resp.subscribe((data)=>this.beds=data);
   }
 
