@@ -1,1 +1,16 @@
-<router-outlet> </router-outlet>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<h1>
+    Welcome To Philips Hospital
+</h1>
+
+<li><a [routerLink]="[ '/register']">Register Patient</a></li>
+
+<li><a [routerLink]="[ '/patients']">View Patients</a></li>
+<li><a [routerLink]="[ '/beds']">View Beds</a></li>
+
+<div>
+    <router-outlet></router-outlet>
+</div>

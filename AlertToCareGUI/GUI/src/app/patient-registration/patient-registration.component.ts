@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Patient} from '../patient';
 import { RegisterpatientService } from '../registerpatient.service';
 
@@ -20,5 +21,6 @@ export class PatientRegistrationComponent implements OnInit {
       console.log(this.patient);
     let resp=this.service.doRegisterPatient(this.patient);
     resp.subscribe((data)=>this.message=data);
+    
   }
 }
