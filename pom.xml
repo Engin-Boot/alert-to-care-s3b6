@@ -21,13 +21,7 @@
 
 	<dependencies>
 
-    <dependency>
-        <groupId>com.oracle</groupId>
-        <artifactId>ojdbc</artifactId>
-        <version>6</version>
-        <scope>system</scope>
-        <systemPath>C:\Users\320089160\Downloads\ojdbc6.jar</systemPath>
-	</dependency>
+   
 
 	<dependency>
 			<groupId>org.springframework.boot</groupId>
