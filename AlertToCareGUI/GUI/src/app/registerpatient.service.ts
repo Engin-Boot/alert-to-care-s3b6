@@ -34,4 +34,10 @@ export class RegisterpatientService {
   public resetThestatus(bed){
     return this.http.post("http://localhost:8082/resetAlert",bed,{responseType:'text' as 'json'});
   }
+  public setupICU(n){
+    return this.http.get("http://localhost:8082/ICU/"+n);
+  }
+  public setupLshape(n){
+    return this.http.get("http://localhost:8082/Lshape/"+n);
+  }
 }

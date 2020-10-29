@@ -11,6 +11,7 @@ import { ViewPatientsComponent } from './view-patients/view-patients.component';
 import { NurseLoginComponent } from './nurse-login/nurse-login.component';
 
 import { ViewBedComponent } from './view-bed/view-bed.component';
+import { SetupComponent } from './setup/setup.component';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { ViewBedComponent } from './view-bed/view-bed.component';
     ViewPatientsComponent,
     NurseLoginComponent,
    
-    ViewBedComponent
+    ViewBedComponent,
+   
+    SetupComponent
   ],
   imports: [
     BrowserModule,
