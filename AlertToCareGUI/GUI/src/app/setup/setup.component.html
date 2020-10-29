@@ -1,0 +1,27 @@
+<form style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Setup ICU</h1>
+      <p>Please fill the details to setup ICU</p>
+      <hr>
+  
+        <label for="layout"><b>Layout</b></label>
+      <br>
+      <select required [(ngModel)]="shape.dept" name="dept">
+        <option value="ICU">ICU</option>
+        <option value="Lshape">Lshape</option>
+      </select>
+      <br>
+      <!-- <input type="text" placeholder="Enter Layout" name="client_layout" required [(ngModel)]="client_layout"> -->
+
+      <label for="no_of_beds"><b>Number of Beds</b></label>
+      <input type="number" placeholder="Number of Beds" name="no_of_beds" required [(ngModel)]="shape.nbed">
+  
+      <div class="clearfix">
+        <table>
+          <tr><td>
+            <button type="button" class="setupbtn" (click)="registerType(shape.dept,shape.nbed)">Setup</button>
+          </td></tr>
+        </table>
+      </div>
+    </div>
+  </form>
