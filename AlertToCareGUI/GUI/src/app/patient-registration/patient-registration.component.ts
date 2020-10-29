@@ -10,7 +10,7 @@ import { RegisterpatientService } from '../registerpatient.service';
 export class PatientRegistrationComponent implements OnInit {
 
   
-    patient:Patient=new Patient(1,"",30,"","");
+    patient:Patient=new Patient(0,"",null,"","");
     message:any;  
   
     constructor(private service:RegisterpatientService) { }

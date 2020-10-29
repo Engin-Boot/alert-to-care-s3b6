@@ -13,6 +13,6 @@ export class RegisterpatientService {
   }
 
   public getPatientsList(){
-    return this.http.get("http://localhost:8082/getAllUsers");
+    return this.http.get("http://localhost:8082/viewAllPatients");
   }
 }

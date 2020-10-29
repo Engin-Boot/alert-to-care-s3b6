@@ -25,10 +25,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let patient of patients | async">
-            <td>{{patient.pid}}</td>
-            <td>{{patient.pname}}</td>
-            <td>{{patient.pnum}}</td>
-            
+            <td>{{patient.pId}}</td>
+            <td>{{patient.pName}}</td>
+            <td>{{patient.pNum}}</td>
           </tr>
         </tbody>
       </table>

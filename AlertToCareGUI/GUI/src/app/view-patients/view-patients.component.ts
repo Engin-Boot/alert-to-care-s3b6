@@ -20,7 +20,7 @@ export class ViewPatientsComponent implements OnInit {
     this.reloadData();
   }
   reloadData(){
-    // this.patients=this.patientService.getPatientsList();
+    let resp = this.patientService.getPatientsList();
   }
 
   
