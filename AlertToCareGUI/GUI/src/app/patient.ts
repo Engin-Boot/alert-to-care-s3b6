@@ -5,5 +5,6 @@ export class Patient{
         public phoneNo:number,
         public dateOfAdmit:string,
         public dateOfDischarge:string
+
     ){}
 }

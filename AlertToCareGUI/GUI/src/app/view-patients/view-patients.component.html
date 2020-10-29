@@ -1,35 +1,48 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<div style="text-align: center">  
-</div>
 
 
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Patient List</h2>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead>
+
+<div class="container">
+  <div class="container">
+      <div class="row col-md-6 col-md-offset-2 custyle">
+      <table class="table table-striped custab">
+      <thead>
           <tr>
-            <th>Patient ID</th>
-            <th>Patient Name</th>
-            <th>Patient Contact</th>
-            <th>DOA</th>
-            <th> DOD</th>
-            
+              <th>ID</th>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>DOA</th>
+              <th>DOD</th>
+              
           </tr>
+<<<<<<< HEAD
         </thead>
         <tbody>
           <tr *ngFor="let patient of patients | async">
             <td>{{patient.pId}}</td>
             <td>{{patient.pName}}</td>
             <td>{{patient.pNum}}</td>
+=======
+      </thead>
+      <tbody>
+          <tr *ngFor="let patient of patients">
+              <td>{{patient.pId}}</td>
+              <td>{{patient.pName}}</td>
+              <td>{{patient.phoneNo}}</td>
+              <td>{{patient.dateOfAdmit}}</td>
+              <td>{{patient.dateOfDischarge}}</td>
+              
+                <td class="text-center"><button class="btn btn-info" (click)="admit(patient.pId)"> Admit</button></td>
+                <td class="text-center"><button class="btn btn-info" (click)="discharge(patient.pId)"> Discharge</button></td>
+                <td class="text-center"><button class="btn btn-danger" (click)="delete(patient.pId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+              
+>>>>>>> 3cbacabfbeeb6dd4b7860e157637b7304814e756
           </tr>
-        </tbody>
+      </tbody>
       </table>
-    </div>
+      </div>
   </div>
