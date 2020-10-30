@@ -16,8 +16,11 @@ export class RegisterpatientService {
   public getPatientsList(){
     return this.http.get("http://localhost:8082/viewAllPatients");
   }
-  public admitThePatient(id){
-    return this.http.get("http://localhost:8082/admit/"+id);
+  public admitThePatientICU(id){
+    return this.http.get("http://localhost:8082/admitTo/ICU/"+id);
+  }
+  public admitThePatientLshape(id){
+    return this.http.get("http://localhost:8082/admitTo/Lshape/"+id);
   }
   public dischargePatient(id){
     return this.http.get("http://localhost:8082/discharge/"+id);

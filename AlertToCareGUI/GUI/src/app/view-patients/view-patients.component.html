@@ -28,7 +28,8 @@
               <td>{{patient.dateOfAdmit}}</td>
               <td>{{patient.dateOfDischarge}}</td>
               
-                <td class="text-center"><button class="btn btn-info" (click)="admit(patient.pId)"> Admit</button></td>
+                <td class="text-center"><button class="btn btn-info" (click)="admitICU(patient.pId)"> Admit To ICU1</button></td>
+                <td class="text-center"><button class="btn btn-info" (click)="admitLshape(patient.pId)"> Admit To ICU2</button></td>
                 <td class="text-center"><button class="btn btn-info" (click)="discharge(patient.pId)"> Discharge</button></td>
                 <td class="text-center"><button class="btn btn-danger" (click)="delete(patient.pId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
               

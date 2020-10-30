@@ -12,11 +12,17 @@ import { RegisterpatientService } from '../registerpatient.service';
 })
 export class ViewPatientsComponent implements OnInit {
  patients:any;
+ msg:any;
 
   constructor(private patientService:RegisterpatientService) { }
 
-  public admit(id:number){
-    let resp=this.patientService.admitThePatient(id);
+  public admitICU(id:number){
+    let resp=this.patientService.admitThePatientICU(id);
+    resp.subscribe((data)=>this.patients=data);
+    resp.subscribe((data)=>this.msg=data);
+  }
+  public admitLshape(id:number){
+    let resp=this.patientService.admitThePatientLshape(id);
     resp.subscribe((data)=>this.patients=data);
   }
   public discharge(id:number){

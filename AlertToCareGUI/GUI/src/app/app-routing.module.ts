@@ -14,7 +14,8 @@ const routes: Routes = [
   {path:"patients",component:ViewPatientsComponent},
   {path:"login",component:NurseLoginComponent},
   {path:"beds",component:ViewBedComponent},
-  {path:"setup",component:SetupComponent}
+  {path:"setup",component:SetupComponent},
+  {path:"nurse",component:NurseLoginComponent}
   // {path:"search",component:ViewAndDeletePatientComponent}
 ];
 

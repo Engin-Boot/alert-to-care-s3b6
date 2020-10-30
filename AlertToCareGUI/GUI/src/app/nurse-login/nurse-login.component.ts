@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterpatientService } from '../registerpatient.service';
 
 @Component({
   selector: 'app-nurse-login',
@@ -6,16 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nurse-login.component.css']
 })
 export class NurseLoginComponent implements OnInit {
-  username:string;
-  password:string;
-  constructor() { }
-
+  
+  beds:any;
+  message:any;
+  
+  constructor(private patientService:RegisterpatientService) { }
   ngOnInit(){
+    let resp = this.patientService.viewAllBeds();
+    resp.subscribe((data)=>this.beds=data);
   }
-  LoginUser(){
-    if(this.username=="Admin" && this.password=="hospital"){
-      console.log("Welcome To Philips Hospital");
-    }
-  }
+  
 
 }

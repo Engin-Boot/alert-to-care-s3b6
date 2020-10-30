@@ -3,7 +3,9 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+  </div>
 
 
 <div class="container">
@@ -13,8 +15,8 @@
       <thead>
           <tr>
               <th>ID</th>
-              <th>Alert Status</th>
-              <th>DOA</th>
+              <!-- <th>Alert Status</th> -->
+              <!-- <th>DOA</th> -->
               <th>DEPT</th>
               <th>Patient ID</th>
               <!-- <th>x</th>
@@ -25,8 +27,8 @@
       <tbody>
           <tr *ngFor="let bed of beds">
               <td>{{bed.bId}}</td>
-              <td>{{bed.alertStatus}}</td>
-              <td>{{bed.dateOfAdmit}}</td>
+              <!-- <td>{{bed.alertStatus}}</td> -->
+              <!-- <td>{{bed.dateOfAdmit}}</td> -->
               <td>{{bed.dpt}}</td>
               <td>{{bed.patientId}}</td>
               <!-- <td>{{bed.xCoordinate}}</td>
