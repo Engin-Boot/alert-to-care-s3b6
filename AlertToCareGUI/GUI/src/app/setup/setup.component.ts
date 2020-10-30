@@ -19,17 +19,15 @@ export class SetupComponent implements OnInit {
   ngOnInit(): void {
   }
     public registerType(shape:string,n:number){
-      console.log(shape);
-       
-      if(shape=="Lshape"){
+        if(shape=="Lshape"){
 
-        let resp=this.patientService.setupLshape(n);
-        resp.subscribe((data)=>this.message=data);
-      }
-      if(shape="ICU"){
-        let resp=this.patientService.setupICU(n);
-          resp.subscribe((data)=>this.message=data);
-      }
+            let resp=this.patientService.setupLshape(n);
+            resp.subscribe((data)=>this.message=data);
+        }
+        else if(shape="ICU"){
+            let resp=this.patientService.setupICU(n);
+            resp.subscribe((data)=>this.message=data);
+        }
     }
   // public addICU(shape:string,n:number){  
   //   let resp=this.patientService.setupICU(shape,n);
