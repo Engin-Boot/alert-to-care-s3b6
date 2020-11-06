@@ -26,11 +26,12 @@ export class SetupComponent implements OnInit {
         let resp=this.patientService.setupLshape(n);
         resp.subscribe((data)=>this.message=data);
       }
-      if(shape="ICU"){
+      else if(shape="ICU"){
         let resp=this.patientService.setupICU(n);
           resp.subscribe((data)=>this.message=data);
       }
     }
+
   // public addICU(shape:string,n:number){  
   //   let resp=this.patientService.setupICU(shape,n);
   //   resp.subscribe((data)=>this.message=data);
